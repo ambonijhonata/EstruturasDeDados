@@ -6,8 +6,8 @@ struct Node {
     struct Node* next;
 };
 
-struct Node* initializeList() {
-    return NULL; 
+void initializeList(Node** list) {
+    *list = NULL; 
 }
 
 void addAtEnd(struct Node** list, int data) {
@@ -27,7 +27,7 @@ void addAtEnd(struct Node** list, int data) {
     else
     {
         struct Node* aux = *list;
-        while (aux->next )
+        while (aux->next)
         {
             aux = aux->next;
         }
@@ -91,7 +91,8 @@ void printList(Node** list) {
 
 int main() {
     
-    Node* list = initializeList();
+    Node* list;
+    initializeList(&list);
 
     addAtEnd(&list, 1);
     addAtEnd(&list, 2);
